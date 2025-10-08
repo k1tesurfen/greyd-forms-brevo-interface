@@ -8,7 +8,7 @@ return array(
     'description' => __("Connect you re Brevo account to automatically create Brevo contacts through forms.", 'greyd_forms'),
     'options'     => array(
       'api_key' => __("API v3 key:", 'greyd_forms'),
-      'lists'   => __("Kontaktlisten:", 'greyd_forms'),
+      'lists'   => __("Contact lists:", 'greyd_forms'),
     ),
   ),
 

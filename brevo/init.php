@@ -105,7 +105,7 @@ class Brevo
         wp_die('success::' . json_encode($lists));
       }
     }
-    wp_die('error::' . __("Listenanfrage fehlgeschlagen. Check deinen API key und versuche es erneut.", 'greyd_forms'));
+    wp_die('error::' . __("Lists could not be retrieved. Check your API key and try again.", 'greyd_forms'));
   }
 
   /**
@@ -125,7 +125,7 @@ class Brevo
     $name           = Greyd_Forms_Interfaces::get_interface_config(self::INTERFACE, 'name');
     $fields         = isset($postmeta['normal']) ? (array) $postmeta['normal'] : array();
     if (! isset($fields['email']) || empty($formdata[$fields['email']])) {
-      return $name . ': ' . __("Email nicht definiert, Kontakt konnte nicht gesendet werden.", 'greyd_forms');
+      return $name . ': ' . __("Email is not defined, contact could not be sent.", 'greyd_forms');
     }
 
     foreach ($fields as $key => $val) {
@@ -162,7 +162,7 @@ class Brevo
       $redirect_url = isset($postmeta['meta']['doi_redirect_url']) ? $postmeta['meta']['doi_redirect_url'] : '';
 
       if (empty($template_id) || empty($redirect_url)) {
-        return $name . ': ' . __("Double Opt-In ist aktiv, jedoch fehlt Template ID oder Umleitungs-URL.", 'greyd_forms');
+        return $name . ': ' . __("Double Opt-In is enabled, but the Template ID or Redirection URL is missing.", 'greyd_forms');
       }
 
       // Add required DOI fields to the payload
@@ -171,13 +171,13 @@ class Brevo
       $interface_data['includeListIds'] = array(intval($list_id));
 
       $response = Brevo_Handler::create_doi_contact($interface_data);
-      $log_message = __("Double Opt-In Bestätigung wurde versandt.", 'greyd_forms');
+      $log_message = __("Double Opt-In confirmation has been sent.", 'greyd_forms');
     } else {
       $interface_data['listIds'] = array(intval($list_id));
       $interface_data['updateEnabled'] = isset($postmeta['meta']['update']);
 
       $response = Brevo_Handler::create_or_update_contact($interface_data);
-      $log_message = __("Kontakt wurde erfolgreich erstellt oder aktualisiert.", 'greyd_forms');
+      $log_message = __("Contact was created or updated successfully.", 'greyd_forms');
     }
 
     if ($response === true) {
@@ -228,7 +228,7 @@ class Brevo
     $response = Brevo_Handler::delete_contact($meta['email']);
 
     if ($response === true) {
-      Helper::log_entry_state($entry_id, $name . ': ' . __("Kontakt wurde gelöscht.", 'greyd_forms'), 'success', false);
+      Helper::log_entry_state($entry_id, $name . ': ' . __("Contact has been deleted.", 'greyd_forms'), 'success', false);
     } else {
       Helper::log_entry_state($entry_id, $name . ': ' . self::get_error($response));
     }
