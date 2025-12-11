@@ -21,9 +21,19 @@ return array(
     'normal' => array(
       'fields' => array(
         // Standard Brevo contact attributes.
-        'email'      => _x("Email", 'small', 'greyd_forms'),
-        'FIRSTNAME'  => _x("First Name", 'small', 'greyd_forms'),
-        'LASTNAME'   => _x("Last Name", 'small', 'greyd_forms'),
+        'EMAIL'      => _x("Email", 'small', 'greyd_forms'),
+        'NACHNAME'   => _x("Nachname", 'small', 'greyd_forms'),
+        'VORNAME'  => _x("Vorname", 'small', 'greyd_forms'),
+        'ANREDE'      => _x("Anrede", 'small', 'greyd_forms'),
+        'TITEL'  => _x("Titel", 'small', 'greyd_forms'),
+        'JOB_TITLE'   => _x("Jobtitel/Position", 'small', 'greyd_forms'),
+        'SMS'   => _x("SMS", 'small', 'greyd_forms'),
+        'WHATSAPP'   => _x("WhatsApp", 'small', 'greyd_forms'),
+        'LINKEDIN'   => _x("LinkedIn", 'small', 'greyd_forms'),
+        'EXT_ID'   => _x("Referenz ID", 'small', 'greyd_forms'),
+        'CONTACT_TIMEZONE'   => _x("Zeitzone", 'small', 'greyd_forms'),
+        'OPT_IN'   => _x("Opt-In", 'small', 'greyd_forms'),
+        'DOUBLE_OPT-IN'   => _x("Double Opt-In", 'small', 'greyd_forms'),
       ),
     ),
     'meta'   => array(
