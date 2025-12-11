@@ -21,7 +21,7 @@ return array(
     'normal' => array(
       'fields' => array(
         // Standard Brevo contact attributes.
-        'EMAIL'      => _x("Email", 'small', 'greyd_forms'),
+        'email'      => _x("Email", 'small', 'greyd_forms'),
         'NACHNAME'   => _x("Nachname", 'small', 'greyd_forms'),
         'VORNAME'  => _x("Vorname", 'small', 'greyd_forms'),
         'ANREDE'      => _x("Anrede", 'small', 'greyd_forms'),
